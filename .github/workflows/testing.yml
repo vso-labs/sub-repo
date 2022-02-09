@@ -1,0 +1,25 @@
+name: Testing Docs
+on:
+  push:
+    branches:
+      - '*'       # matches every branch that doesn't contain a '/'
+      - '*/*'     # matches every branch containing a single '/'
+      - '**'      # matches every branch
+      - '!main'   # excludes main
+jobs:
+  build:
+    name: Test MkDocs Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Main
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Mkdocs
+        run: pip install --upgrade mkdocs mkdocs-autorefs mkdocstrings mkdocs-mermaid2-plugin
+
+      - name: Build the Docs site
+        run: mkdocs build
