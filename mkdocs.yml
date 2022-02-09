@@ -1,0 +1,10 @@
+site_name: VSO Labs - Sub Repo
+site_description: "Using Github pages for documentation sub repo"
+repo_url: "https://github.com/vso-labs/sub-repo"
+site_url: "https://vso-labs.github.io/sub-repo"
+edit_uri: "blob/main/docs/"
+repo_name: "vso-labs/sub-repo"
+
+
+
+<a href="/sub-repo
