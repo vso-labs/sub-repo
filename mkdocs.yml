@@ -6,5 +6,50 @@ edit_uri: "blob/main/docs/"
 repo_name: "vso-labs/sub-repo"
 
 
+# ==================================================================================================================================
+#   Ignore and do not change anything below this line, these are the standard settings that should be in place for our documentation
+# ==================================================================================================================================
 
-<a href="/sub-repo
+# ==================================================================================================================================
+# Setting up the basic NAT docs theme
+theme:
+  icon:
+    favicon: material/doctor
+    logo: material/doctor
+    repo: fontawesome/brands/github
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+
+# ==================================================================================================================================
+# Setting up the basic NAT plugins
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings
+  - mermaid2
+
+# ==================================================================================================================================
+# Setting up the basic file for any additional CSS requirements this file needs to be added to the ./docs/css folder.
+# If the folder does not exist needs to be created
+extra_css:
+  - css/extra.css
+
+# ==================================================================================================================================
+# Setting up the required markdown extensions
+markdown_extensions:
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - attr_list
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.progressbar
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.tilde
